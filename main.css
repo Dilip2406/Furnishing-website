@@ -412,6 +412,7 @@ header.active .bars img{
 
 }
 
+
 .shop-flex .shop-one img{
     width:100%;
 
@@ -442,6 +443,8 @@ header.active .bars img{
     align-items: center;
     padding:0px 20px;
     color:#FFF;
+    visibility: hidden;
+    transition:  .5s ease-in-out;
 
 
 }
@@ -503,6 +506,22 @@ header.active .bars img{
     animation: linking .8s ease-in-out forwards;
  
 }
+
+.shop-one .image-one:hover .overlay
+{
+    visibility: visible;
+}
+
+.shop-three:hover .link{
+    animation: linking .8s ease-in-out forwards;
+ 
+}
+
+.shop-three:hover .overlay
+{
+    visibility: visible;
+}
+
 @keyframes linking{
     0%{
         opacity: 0;
@@ -518,6 +537,10 @@ header.active .bars img{
 
 }
 .shop-one .image-one .link{
+    animation: linking2 .8s ease-in-out forwards;
+ 
+}
+.shop-three .link{
     animation: linking2 .8s ease-in-out forwards;
  
 }
@@ -545,6 +568,9 @@ header.active .bars img{
 {
     animation: header .8s ease-in-out forwards;
 }
+.shop-three .image-three:hover .txt{
+    animation: header .8s ease-in-out forwards;   
+}
 @keyframes header{
     0%{
         opacity: 0;
@@ -559,6 +585,10 @@ header.active .bars img{
 
 }
 .shop-one .image-one .txt
+{
+    animation: header2 .8s ease-in-out forwards;
+}
+.shop-three .image-three .txt
 {
     animation: header2 .8s ease-in-out forwards;
 }
@@ -577,7 +607,49 @@ header.active .bars img{
 
 }
 
+.shop-flex .shop-three{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
 
+.shop-three .overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    display: flex;
+    
+    align-items: center;
+    padding:0px 20px;
+    color:#FFF;
+    visibility: hidden;
+    transition:  .5s ease-in-out;
+
+
+}
+
+.shop-three .overlay section{
+    font-size: 15px;
+}
+
+.shop-three .overlay h3{
+    margin-bottom: 3px;
+}
+
+.shop-three .overlay span{
+    color:#4abcc6;
+
+}
+
+.shop-three .overlay .link{
+    position:absolute;
+    bottom:50px;
+
+}
 
 .big-furn{
     width: 90%;

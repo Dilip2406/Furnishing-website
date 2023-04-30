@@ -1,4 +1,5 @@
 function myNav(){
+    
     let bar=document.getElementById("bar");
     let nav=document.querySelector(".navigation")
     bar.onclick=()=>{
@@ -21,6 +22,41 @@ myNav();
 
 function myHeader()
 {
+    var currentPageURL = window.location.href;
+  
+  
+  if(currentPageURL.indexOf('login.html') !== -1){
+
+    document.querySelector('header').style.cssText="position:static; background-color:rgb(106,105,106);"
+    document.querySelector('body').style.cssText="height:100%; overflow-y: hidden;";
+
+
+    document.querySelector('footer').style.cssText="height: 100px; position: sticky; top:auto; bottom: 70px;"
+
+    document.getElementById('content').style.cssText="min-height: calc(90% - 120px); "
+
+
+
+
+
+    return;
+  }
+  if((currentPageURL.indexOf('shop.html') !== -1))
+  {
+    document.querySelector('header').style.cssText="background-color:rgb(106,105,106);"
+    document.querySelector('body').style.cssText="position:relative; height:70%;";
+
+
+    document.querySelector('footer').style.cssText="height: 100px; width:100% ;position: absolute; bottom: 70px;"
+
+    document.getElementById('content').style.cssText=" overflow-y:auto  "
+
+
+    
+
+  }
+  
+
     let header=document.getElementById("header");
     let lamp=document.getElementById("lamp");
     window.addEventListener("scroll",function()
@@ -28,6 +64,7 @@ function myHeader()
         if(window.scrollY>0)
         {
             header.classList.add("active");
+           
             lamp.src="pic/bulb2.png";
 
         }
@@ -110,3 +147,20 @@ function toTop(){
 
 }
 toTop();
+
+function submitForm() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+
+    var namecheck=/^[a-zA-Z0-9]+$/;
+    var passcheck=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#]).{8,}$/;
+
+    if(namecheck.test(user) && passcheck.test(pass)){
+        document.getElementById("message").innerHTML = '<div class="alert alert-success mt-3" role="alert">Login successful!</div>';
+
+    } else {
+        document.getElementById("message").innerHTML = '<div class="alert alert-danger mt-3" role="alert">Invalid username or password!</div>';
+    }
+
+}

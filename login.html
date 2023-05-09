@@ -32,6 +32,28 @@
        
        
     </style>
+    <script>
+      function validate(){
+    var name = document.getElementById("form2Example1").value;
+    var pass = document.getElementById("form2Example2").value;
+    console.log(name);
+    console.log(pass);
+
+    var checkname = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var checkpass = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+    console.log(checkname.test(name));
+    console.log(checkpass.test(pass));
+
+    if(checkname.test(name) && checkpass.test(pass)){
+        window.alert("Login Successfull!");
+    }
+    else{
+        window.alert("Invalid Id or Password!");
+    }
+}
+
+    </script>
 
 
 </head>
@@ -88,7 +110,7 @@
   </div>
 
   <!-- Submit button -->
-  <button type="button" class="btn btn-primary  btn-block mb-1">Sign in</button>
+  <button type="button" class="btn btn-primary  btn-block mb-1" onclick="validate()">Sign in</button>
 
   <!-- Register buttons -->
   <div class="text-center">

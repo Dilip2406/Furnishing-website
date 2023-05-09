@@ -25,7 +25,7 @@ function myHeader()
     var currentPageURL = window.location.href;
   
   
-  if(currentPageURL.indexOf('login.html') !== -1){
+  if((currentPageURL.indexOf('login.html') !== -1)||(currentPageURL.indexOf('d3js.html') !== -1)){
 
     document.querySelector('header').style.cssText="position:static; background-color:rgb(106,105,106);"
     document.querySelector('body').style.cssText="height:100%; overflow-y: hidden;";
